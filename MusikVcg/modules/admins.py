@@ -84,7 +84,7 @@ async def stop(_, message: Message):
             pass
 
         await callsmusic.stop(chat_id)
-        await message.reply_text("❌ **Memberhentikan lagu !**")
+        await message.reply_text("❌ **UDAH BERHENTI YA KONTOL !**")
 
 
 @Client.on_message(command("skip") & other_filters)
@@ -94,7 +94,7 @@ async def skip(_, message: Message):
     global que
     chat_id = get_chat_id(message.chat)
     if chat_id not in callsmusic.active_chats:
-        await message.reply_text("**Tidak ada lagu yang sedang diputar untuk diskip !**")
+        await message.reply_text("**MANA GAADA ANJINK GOBLOK !**")
     else:
         queues.task_done(chat_id)
         if queues.is_empty(chat_id):
@@ -107,7 +107,7 @@ async def skip(_, message: Message):
         skip = qeue.pop(0)
     if not qeue:
         return
-    await message.reply_text(f"- Melewati lagu **{skip[0]}**\n- Lagu yang diputar sekarang **{qeue[0][0]}**")
+    await message.reply_text(f"- Melewati lagu **{skip[0]}**\n- GUA SKIP YA KONTOL **{qeue[0][0]}**")
 
 
 @Client.on_message(filters.command("reload"))
@@ -120,4 +120,4 @@ async def admincache(client, message: Message):
             for member in await message.chat.get_members(filter="administrators")
         ],
     )
-    await message.reply_text("✅ Bot telah aktif\n✅ Daftar admin diperbaharui!\n\n✨ **Jika error silahkan chat ke @xxstanme **")
+    await message.reply_text("✅ Bot telah aktif\n✅ Daftar admin diperbaharui!\n\n✨ **Jika error silahkan chat ke @urfavresh **")
