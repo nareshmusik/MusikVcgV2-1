@@ -84,7 +84,7 @@ async def stop(_, message: Message):
             pass
 
         await callsmusic.stop(chat_id)
-        await message.reply_text("❌ **Memberhentikan lagu !**")
+        await message.reply_text("❌ **NARESH NYA UDAH CAPE ANJINK !**")
 
 
 @Client.on_message(command("skip") & other_filters)
@@ -107,7 +107,7 @@ async def skip(_, message: Message):
         skip = qeue.pop(0)
     if not qeue:
         return
-    await message.reply_text(f"- Melewati lagu **{skip[0]}**\n- Lagu yang diputar sekarang **{qeue[0][0]}**")
+    await message.reply_text(f"- LEWAT AJA ANJING **{skip[0]}**\n- Lagu yang diputar sekarang **{qeue[0][0]}**")
 
 
 @Client.on_message(filters.command("reload"))
@@ -120,4 +120,4 @@ async def admincache(client, message: Message):
             for member in await message.chat.get_members(filter="administrators")
         ],
     )
-    await message.reply_text("✅ Bot telah aktif\n✅ Daftar admin diperbaharui!\n\n✨ **Jika error silahkan chat ke @xxstanme **")
+    await message.reply_text("✅ Bot telah aktif\n✅ Daftar admin diperbaharui!\n\n✨ **Jika error silahkan chat ke @urfavresh **")
