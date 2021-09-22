@@ -47,13 +47,13 @@ def _start(client, message):
                 ],
                 [
                     InlineKeyboardButton(
-                        "📲 Group", url=f"https://t.me/ChatBotXanon"
+                        "📲 Group", url=f"https://t.me/mutuulanaja"
                     ),
                     InlineKeyboardButton(
-                        "👤 Owner", url=f"https://t.me/xxstanme"
+                        "👤 Owner", url=f"https://t.me/urfavresh"
                     ),
                 ],
-                [InlineKeyboardButton("💬 Tanya tanya klik disini", url=f"https://t.me/xxstanme")],
+                [InlineKeyboardButton("💬 Tanya naresh disini ngentod", url=f"https://t.me/urfavresh")],
             ]
         ),
         reply_to_message_id=message.message_id
@@ -68,7 +68,7 @@ async def gstart(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "💬 Tanya tanya klik disini", url=f"https://t.me/xxstanme"
+                        "💬 Tanya naresh klik disini anjink", url=f"https://t.me/urfavresh"
                     )
                 ]
             ]
@@ -121,15 +121,15 @@ def map(pos):
             ],
             [
                 InlineKeyboardButton(
-                    text="📲 Group", url=f"https://t.me/ChatBotXanon"
+                    text="📲 Group", url=f"https://t.mutuualanaja"
                 ),
                 InlineKeyboardButton(
-                    text="👤 Owner", url=f"https://t.me/xxstanme"
+                    text="👤 Owner", url=f"https://t.me/urfavresh"
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    text="💬 Tanya tanya klik disini", url=f"https://t.me/xxstanme"
+                    text="💬 Tanya naresh klik disini bangsad", url=f"https://t.me/urfavresh"
                 )
             ],
             [InlineKeyboardButton(text="◀️", callback_data=f"help+{pos-1}")],
