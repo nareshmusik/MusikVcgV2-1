@@ -1070,7 +1070,7 @@ async def lol_cb(b, cb):
             "Anda bukan orang yang meminta untuk memutar lagu !", show_alert=True
         )
         return
-    await cb.message.edit("Tunggu sebentar ya anak setan 👹")
+    await cb.message.edit("Tunggu sebentar ya anak kontol biadap haram😡")
     x = int(x)
     try:
         useer_name = cb.message.reply_to_message.from_user.first_name
