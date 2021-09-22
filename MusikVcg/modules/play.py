@@ -13,7 +13,7 @@
 #
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
-# Remodified by @xxstanme
+# Remodified by @urfavresh
 
 
 import os
@@ -145,13 +145,13 @@ async def playlist(client, message):
         temp.append(t)
     now_playing = temp[0][0]
     by = temp[0][1].mention(style="md")
-    msg = "**Lagu yang sedang diputar di** {}".format(message.chat.title)
+    msg = "**Desahan yang sedang diputar di** {}".format(message.chat.title)
     msg += "\n- " + now_playing
-    msg += "\n- Req by " + by
+    msg += "\n- anak anjink adalah " + by
     temp.pop(0)
     if temp:
         msg += "\n\n"
-        msg += "**Antrian lagu**"
+        msg += "**Antrian bansos**"
         for song in temp:
             name = song[0]
             usr = song[1].mention(style="md")
@@ -360,13 +360,13 @@ async def m_cb(b, cb):
             temp.append(t)
         now_playing = temp[0][0]
         by = temp[0][1].mention(style="md")
-        msg = "**Lagu yang sedang diputar di** {}".format(cb.message.chat.title)
+        msg = "**Desahan yang sedang diputar di** {}".format(cb.message.chat.title)
         msg += "\n- " + now_playing
-        msg += "\n- Req by " + by
+        msg += "\n- anak anjink adalah " + by
         temp.pop(0)
         if temp:
             msg += "\n\n"
-            msg += "**Antrian lagu**"
+            msg += "**Antrian bansos**"
             for song in temp:
                 name = song[0]
                 usr = song[1].mention(style="md")
@@ -449,7 +449,7 @@ async def play(_, message: Message):
     global useer
     if message.chat.id in DISABLED_GROUPS:
         return
-    lel = await message.reply("🔄 **Mohon tunggu sebentar**")
+    lel = await message.reply("🔄 **SABAR ANJINK LOEH KATA NARESH**")
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
 
@@ -503,7 +503,7 @@ async def play(_, message: Message):
         )
         return
     text_links = None
-    await lel.edit("🔍 **Mencari lagu**")
+    await lel.edit("🔍 **Mencari bansos**")
     if message.reply_to_message:
         if message.reply_to_message.audio:
             pass
@@ -557,7 +557,7 @@ async def play(_, message: Message):
         )
     elif urls:
         query = toxt
-        await lel.edit("🎶 **Memproses lagu yang diminta**")
+        await lel.edit("🎶 **otw naresh setelin nih anjink**")
         ydl_opts = {"format": "bestaudio/best"}
         try:
             results = YoutubeSearch(query, max_results=1).to_dict()
@@ -610,7 +610,7 @@ async def play(_, message: Message):
         for i in message.command[1:]:
             query += " " + str(i)
         print(query)
-        await lel.edit("🎶 **Memproses lagu yang diminta**")
+        await lel.edit("🎶 **SABAR LOADING NGENTOD**")
         ydl_opts = {"format": "bestaudio/best"}
 
         try:
@@ -619,7 +619,7 @@ async def play(_, message: Message):
             await lel.edit("**Lagu tidak ditemukan.** Coba cari dengan judul lagu yang lebih jelas, Ketik `/help` bila butuh bantuan")
         # Looks like hell. Aren't it?? FUCK OFF
         try:
-            toxxt = "**Silahkan pilih lagu yang ingin Anda putar :**\n\n"
+            toxxt = "**Silahkan pilih desahan yang lu pilih kontol :**\n\n"
             j = 0
             useer = user_name
             emojilist = [
@@ -724,7 +724,7 @@ async def play(_, message: Message):
         qeue.append(appendable)
         await message.reply_photo(
             photo="final.png",
-            caption=f"🎵 **Lagu yang Anda minta dalam antrian diposisi** {position}!",
+            caption=f"🎵 **Lagu lu di posisi ke brp ya kontol, oh iya ke - ** {position}!",
             reply_markup=keyboard,
         )
         os.remove("final.png")
@@ -746,7 +746,7 @@ async def play(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
-            caption="🔊 **Sedang memutar lagu request-an dari** {} ".format(
+            caption="🔊 **Sedang memutar desahan request-an dari** {} ".format(
                 message.from_user.mention()
             ),
         )
@@ -759,7 +759,7 @@ async def ytplay(_, message: Message):
     global que
     if message.chat.id in DISABLED_GROUPS:
         return
-    lel = await message.reply("🔄 **Memproses...**")
+    lel = await message.reply("🔄 **DI ENTOD....**")
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
 
@@ -812,7 +812,7 @@ async def ytplay(_, message: Message):
             f"<i> {user.first_name} Assistant Bot terkena banned dari Grup ini, Minta admin untuk unbanned assistant bot lalu tambahkan {user.first_name} Assistant Bot secara manual</i>"
         )
         return
-    await lel.edit("🔍 <b>Mencari lagu</b>")
+    await lel.edit("🔍 <b>Mencari desahan</b>")
     message.from_user.id
     message.from_user.first_name
 
@@ -820,7 +820,7 @@ async def ytplay(_, message: Message):
     for i in message.command[1:]:
         query += " " + str(i)
     print(query)
-    await lel.edit("🎶 **Memproses lagu yang diminta**")
+    await lel.edit("🎶 **Memproses desahan yang diminta**")
     ydl_opts = {"format": "bestaudio/best"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -877,7 +877,7 @@ async def ytplay(_, message: Message):
         qeue.append(appendable)
         await message.reply_photo(
             photo="final.png",
-            caption=f"🎵 **Lagu yang Anda minta dalam antrian diposisi** {position}!",
+            caption=f"🎵 **desahan yang Anda minta dalam antrian diposisi** {position}!",
             reply_markup=keyboard,
         )
         os.remove("final.png")
@@ -899,7 +899,7 @@ async def ytplay(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
-            caption="🔊 **Sedang memutar lagu request-an dari** {} ".format(
+            caption="🔊 **Sedang memutar desahan request-an dari** {} ".format(
                 message.from_user.mention()
             ),
         )
@@ -912,7 +912,7 @@ async def jiosaavn(client: Client, message_: Message):
     global que
     if message_.chat.id in DISABLED_GROUPS:
         return
-    lel = await message_.reply("🔄 **Mohon tunggu sebentar**")
+    lel = await message_.reply("🔄 **Mohon sabar kontol**")
     administrators = await get_administrators(message_.chat)
     chid = message_.chat.id
     try:
